@@ -149,4 +149,63 @@
     }
   };
   window.addEventListener('scroll', parallax, { passive: true });
+    // HERO - Digitação dinâmica
+
+  const typingElement = document.querySelector('#hero-typing');
+
+  if (typingElement && !reducedMotion) {
+
+    const words = [
+      'elétrica',
+      'eólica',
+      'hidroelétrica',
+      'termoelétrica'
+    ];
+
+    let wordIndex = 0;
+    let charIndex = words[0].length;
+    let deleting = true;
+
+    function typeEffect() {
+
+      const currentWord = words[wordIndex];
+
+      if (deleting) {
+
+        charIndex--;
+        typingElement.textContent = currentWord.substring(0, charIndex);
+
+        if (charIndex === 0) {
+          deleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+
+          setTimeout(typeEffect, 400);
+          return;
+        }
+
+        setTimeout(typeEffect, 65);
+
+      } else {
+
+        const nextWord = words[wordIndex];
+
+        charIndex++;
+        typingElement.textContent = nextWord.substring(0, charIndex);
+
+        if (charIndex === nextWord.length) {
+          deleting = true;
+
+          setTimeout(typeEffect, 2600);
+          return;
+        }
+
+        setTimeout(typeEffect, 110);
+      }
+    }
+
+    setTimeout(typeEffect, 3200);
+  }
+
+
+
 })();

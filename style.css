@@ -83,6 +83,29 @@ p { color: var(--color-muted); }
 .hero-focus { display:flex; align-items:center; gap:1rem; margin-bottom:1.7rem; color:#7fe0ff; font-size:.95rem; letter-spacing:.16em; font-weight:600; }
 .hero-focus i { width:42px; height:1px; background:rgba(255,255,255,.45); }
 .hero h1 { max-width:900px; margin-bottom:1.8rem; color:#fff; }
+/* HERO - Efeito de digitação */
+
+#hero-typing {
+  white-space: nowrap;
+  color:#71d7fb;
+}
+
+#hero-typing::after {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  margin-left: 4px;
+  background: #fff;
+  vertical-align: -0.06em;
+  animation: typingBlink 0.8s step-end infinite;
+}
+
+@keyframes typingBlink {
+  50% {
+    opacity: 0;
+  }
+}
 .hero-lead { max-width:760px; font-size:clamp(1.05rem, 1.45vw, 1.28rem); color:rgba(255,255,255,.78); line-height:1.6; }
 .hero-actions { display:flex; align-items:center; gap:2rem; margin-top:2.3rem; }
 .button { display:inline-flex; align-items:center; justify-content:center; gap:1.1rem; min-height:52px; padding:0 1.35rem; border:1px solid transparent; font-size:.88rem; font-weight:560; transition:var(--transition); }
