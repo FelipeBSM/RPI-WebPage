@@ -158,7 +158,7 @@
     const words = [
       'elétrica',
       'eólica',
-      'hidroelétrica',
+      'hidrelétrica',
       'termoelétrica'
     ];
 
