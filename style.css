@@ -457,7 +457,20 @@ p { color: var(--color-muted); }
   .hero { min-height: 92svh; }
   .hero-inner { padding-top:130px; padding-bottom:7rem; }
   .hero-media { background-image:linear-gradient(90deg, rgba(1,24,36,.93), rgba(2,29,43,.65)), url('assets/images/pch-hero.jpg'); background-position:58% center; }
-  .hero h1 { font-size:clamp(2.75rem,12vw,4.3rem); }
+  .hero h1 {
+  font-size: clamp(2.75rem, 12vw, 4.3rem);
+  }
+
+  #hero-typing {
+  display: inline-block;
+  min-width: 0;
+  }
+
+  .hero h1 {
+  min-height: 6.48em;
+  }
+
+
   .hero-actions { flex-direction:column; align-items:flex-start; gap:1.2rem; }
   .scroll-indicator { left:20px; }
   .section-index { margin-bottom:3rem; }
@@ -470,7 +483,18 @@ p { color: var(--color-muted); }
   .pch-media { background-position:70% center; }
   .pch-inner { display:block; }
   .pch-copy { max-width:100%; }
-  .pch-copy h2 { font-size:clamp(4rem,20vw,6.4rem); }
+  .pch-copy h2 {
+    font-size: clamp(3.5rem, 15vw, 5rem);
+  }
+  .pch-map {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    max-width: 360px;
+    margin: 2.5rem auto 0;
+  }
   .pch-definitions { position:relative; width:100%; right:auto; top:auto; transform:none; margin-top:3.5rem; }
   .timeline { display:block; padding-left:2.2rem; }
   .timeline::before { content:""; position:absolute; left:4px; top:0; bottom:0; width:1px; background:rgba(7,42,59,.2); }
@@ -482,8 +506,8 @@ p { color: var(--color-muted); }
   .capability-grid { grid-template-columns:1fr; }
   .capability, .capability:nth-child(even) { padding:1.6rem 0; border-right:0 !important; }
   .experience-note { left:1rem; bottom:1rem; }
-  .portrait-frame { max-width:100%; }
-  .portrait-frame img { aspect-ratio:.9; object-position:center 24%; }
+  .portrait-frame { max-width: 300px; height: 320px; margin-inline: auto; }
+  .portrait-frame img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: center 20%; }
   .leadership-highlights { grid-template-columns:1fr; }
   .bio-copy { columns:1; }
   .sector-grid { grid-template-columns:1fr; }
@@ -498,7 +522,10 @@ p { color: var(--color-muted); }
 @media (max-width: 480px) {
   .container { width:min(calc(100% - 32px), var(--container)); }
   h2 { font-size:clamp(2.2rem,10vw,3.1rem); }
-  .hero h1 { font-size:clamp(2.6rem,13vw,3.6rem); }
+  .hero h1 {
+  font-size: clamp(2.4rem, 12vw, 3rem);
+  }
+  .hero-break{ display: block;}
   .hero-lead { font-size:1rem; }
   .hero-focus { margin-bottom:1.3rem; }
   .capability { grid-template-columns:38px 1fr 20px; }
