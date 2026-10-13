@@ -83,6 +83,9 @@ p { color: var(--color-muted); }
 .hero-focus { display:flex; align-items:center; gap:1rem; margin-bottom:1.7rem; color:#7fe0ff; font-size:.95rem; letter-spacing:.16em; font-weight:600; }
 .hero-focus i { width:42px; height:1px; background:rgba(255,255,255,.45); }
 .hero h1 { max-width:900px; margin-bottom:1.8rem; color:#fff; }
+.hero-break{
+  display: none;
+}
 /* HERO - Efeito de digitação */
 
 #hero-typing {
@@ -135,7 +138,7 @@ p { color: var(--color-muted); }
 .about-metrics span { color:var(--color-muted); font-size:.9rem; }
 
 .pchgch { min-height:900px; overflow:hidden; color:#fff; background:var(--color-navy); display:flex; align-items:center; }
-.pch-media { position:absolute; inset:0; background-image:linear-gradient(90deg, rgba(2,28,42,.98) 0%, rgba(2,28,42,.9) 45%, rgba(2,28,42,.38) 100%), url('assets/images/hidreletrica-vert.jpg'); background-size:cover; background-position:center; }
+.pch-media { position:absolute; inset:0; background-image:linear-gradient(90deg, rgba(2,28,42,.98) 0%, rgba(2,28,42,.9) 45%, rgba(2,28,42,.68) 100%), url('assets/images/hidrov2.png'); background-size:cover; background-position:center; }
 .pch-media::after { content:""; position:absolute; inset:0; opacity:.16; background: repeating-radial-gradient(ellipse at 85% 55%, transparent 0 34px, rgba(102,215,251,.28) 35px 36px, transparent 37px 58px); }
 .pch-inner { position:relative; z-index:2; }
 .pch-inner::before { content:""; position:absolute; left:52%; top:18%; height:68%; width:1px; background:rgba(255,255,255,.18); }
@@ -302,12 +305,40 @@ p { color: var(--color-muted); }
 .experience-note { position:absolute; left:-2rem; bottom:-1.2rem; padding:.85rem 1.1rem; background:#fff; color:var(--color-navy); font-size:.62rem; letter-spacing:.17em; }
 
 .leadership { background:#f7f8f6; }
-.leadership-grid { display:grid; grid-template-columns:.78fr 1.22fr; gap:clamp(4rem, 8vw, 8rem); align-items:start; }
-.portrait-frame { position:relative; overflow:hidden; background:#dfe5e5; max-width:440px; }
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: .78fr 1.22fr;
+  gap: clamp(4rem, 8vw, 8rem);
+  align-items: start;
+}
+.portrait-frame {
+  position: relative;
+  overflow: hidden;
+  background: #dfe5e5;
+  max-width: 440px;
+  height: 575px;
+}
 .portrait-frame::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 65%, rgba(5,37,52,.18)); pointer-events:none; }
-.portrait-frame img { width:100%; aspect-ratio:.72; object-fit:cover; object-position:center 24%; filter:saturate(.72) contrast(1.02); transition:transform 700ms var(--ease), filter 700ms var(--ease); }
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: saturate(.72) contrast(1.02);
+  transition: transform 700ms var(--ease), filter 700ms var(--ease);
+}
 .portrait-frame:hover img { transform:scale(1.025); filter:saturate(.9); }
 .portrait-wrap > p { margin-top:.9rem; font-size:.64rem; letter-spacing:.15em; }
+.portrait-wrap {
+  position: relative;
+  align-self: start;
+}
+
+.portrait-frame {
+  flex: 1;
+  min-height: 0;
+}
 .leadership-copy h2 { margin-bottom:.8rem; }
 .leadership-copy > h3 { max-width:760px; color:#37505b; margin-bottom:1.7rem; }
 .leadership-copy > p { max-width:760px; }
@@ -339,7 +370,7 @@ p { color: var(--color-muted); }
 
 .group-rpi { background:#f3f5f4; }
 .group-heading { max-width:720px; }
-.logo-row { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:3.5rem; background:var(--color-border); border:1px solid var(--color-border); }
+.logo-row { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; margin-top:3.5rem; background:var(--color-border); border:1px solid var(--color-border); }
 .logo-box { min-height:180px; display:flex; align-items:center; justify-content:center; background:#fff; }
 .logo-box img { max-width:130px; max-height:72px; width:auto; height:auto; filter:grayscale(.2); }
 
@@ -375,6 +406,22 @@ p { color: var(--color-muted); }
 .capability:nth-child(4), .timeline-item:nth-child(5) { transition-delay:240ms; }
 .capability:nth-child(5), .timeline-item:nth-child(6) { transition-delay:320ms; }
 .capability:nth-child(6), .timeline-item:nth-child(7) { transition-delay:400ms; }
+
+@media (min-width: 1121px) and (max-width: 1440px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+  }
+
+  .hero-content,
+  .hero h1 {
+    max-width: none;
+  }
+  .hero-break{
+    display: block;
+  }
+}
+
 
 @media (max-width: 1120px) {
   .container { width:min(calc(100% - 64px), var(--container)); }
