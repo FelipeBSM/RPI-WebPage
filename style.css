@@ -525,7 +525,7 @@ p { color: var(--color-muted); }
   .hero h1 {
   font-size: clamp(2.4rem, 12vw, 3rem);
   }
-  .hero-break{ display: block;}
+  
   .hero-lead { font-size:1rem; }
   .hero-focus { margin-bottom:1.3rem; }
   .capability { grid-template-columns:38px 1fr 20px; }
