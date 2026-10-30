@@ -682,7 +682,324 @@ p { color: var(--color-muted); }
     font-size: 1.15rem;
   }
 }
+.noale {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f7fbfd;
+  color: #06283b;
+}
 
+/* ---------- HERO ---------- */
+
+.noale-hero {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      #f7fbfd 0%,
+      rgba(247, 251, 253, .99) 20%,
+      rgba(247, 251, 253, .92) 38%,
+      rgba(247, 251, 253, .52) 56%,
+      rgba(247, 251, 253, .04) 76%,
+      rgba(2, 28, 42, .25) 100%
+    ),
+    url("assets/images/noale-pch.png");
+
+  background-size: cover;
+  background-position: center right;
+}
+
+.noale-hero-rings {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    repeating-radial-gradient(
+      circle at 79% 60%,
+      transparent 0,
+      transparent 109px,
+      rgba(255, 255, 255, .3) 110px,
+      transparent 111px,
+      transparent 160px
+    );
+}
+
+.noale-hero-inner {
+  position: relative;
+  z-index: 2;
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+
+  padding-top: 70px;
+  padding-bottom: 65px;
+}
+
+.noale-hero-content {
+  width: 60%;
+  max-width: 680px;
+}
+
+.noale-logo {
+  margin: 0 0 1rem;
+  line-height: 1;
+}
+
+.noale-logo img {
+  display: block;
+  width: min(100%, 470px);
+  height: auto;
+  object-fit: contain;
+}
+
+.noale-subtitle {
+  margin: 0 0 1.6rem;
+
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .24em;
+  line-height: 1.6;
+  color: #24739b;
+}
+
+.noale-description {
+  margin: 0;
+  max-width: 680px;
+
+  font-size: clamp(1rem, 1.35vw, 1.22rem);
+  line-height: 1.55;
+  font-weight: 400;
+  color: #183e54;
+}
+
+.noale-hero-side {
+  flex-shrink: 0;
+  align-self: center;
+  width: 150px;
+  margin-right: 0;
+}
+
+.noale-accent-line {
+  display: block;
+  width: 36px;
+  height: 3px;
+  background: #71d7fb;
+  margin-bottom: 1.2rem;
+}
+
+.noale-hero-side p {
+  margin: 0;
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  line-height: 1.95;
+}
+
+/* ---------- BODY ---------- */
+
+.noale-body {
+  position: relative;
+  padding: 48px 0 65px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7fbfd 0%,
+      #ffffff 65%,
+      #f7fbfd 100%
+    );
+}
+
+.noale-eyebrow {
+  margin: 0 0 1.2rem;
+
+  font-size: .72rem;
+  font-weight: 650;
+  letter-spacing: .24em;
+  color: #007ba6;
+}
+
+/* ---------- SERVIÇOS ---------- */
+
+.noale-services {
+  display: grid;
+  grid-template-columns: 1.8fr repeat(3, 1fr);
+  gap: 0;
+  align-items: start;
+  margin-bottom: 58px;
+}
+
+.noale-services-heading {
+  padding-right: 3rem;
+}
+
+.noale-services-heading h2,
+.noale-team-heading h2 {
+  max-width: 440px;
+  margin: 0;
+
+  font-size: clamp(1.8rem, 2.45vw, 2.5rem);
+  font-weight: 550;
+  line-height: 1.16;
+  letter-spacing: -.045em;
+  color: #06283b;
+}
+
+.noale-services-heading h2 span,
+.noale-team-heading h2 span {
+  color: #00b9e9;
+}
+
+.noale-service {
+  min-width: 0;
+  min-height: 195px;
+  padding: 0 22px 0 27px;
+  border-left: 1px solid rgba(6, 40, 59, .12);
+}
+
+.noale-icon {
+  width: 49px;
+  height: 49px;
+  margin-bottom: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: rgba(0, 151, 201, .10);
+  color: #007ba6;
+
+  transition: transform .35s ease, background .35s ease;
+}
+
+.noale-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+}
+.noale-service:hover .noale-icon {
+  transform: translateY(-4px);
+  background: rgba(0, 151, 201, .17);
+}
+
+.noale-service h3 {
+  margin: 0 0 .6rem;
+
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -.025em;
+  color: #06283b;
+}
+
+.noale-service p {
+  margin: 0;
+
+  font-size: .92rem;
+  line-height: 1.55;
+  color: #5b7181;
+}
+
+/* ---------- EQUIPE ---------- */
+
+.noale-team {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2.2rem;
+  align-items: start;
+}
+
+.noale-team-heading {
+  padding-right: 1rem;
+}
+
+.noale-team-heading h2 {
+  max-width: 310px;
+}
+
+.noale-team-members {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.4rem;
+}
+
+.noale-member {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 125px minmax(0, 1fr);
+  gap: 1.3rem;
+  align-items: start;
+}
+
+.noale-member + .noale-member {
+  padding-left: 2rem;
+  border-left: 1px solid rgba(6, 40, 59, .12);
+}
+
+.noale-member-photo {
+  width: 125px;
+  height: 165px;
+  overflow: hidden;
+  background: #dde7ec;
+}
+
+.noale-member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+
+  filter: saturate(.82);
+  transition: transform .45s ease, filter .45s ease;
+}
+
+.noale-member:hover img {
+  transform: scale(1.04);
+  filter: saturate(1);
+}
+
+.noale-member-info {
+  min-width: 0;
+}
+
+.noale-member-info h3 {
+  margin: 0 0 .35rem;
+
+  font-size: 1.18rem;
+  font-weight: 600;
+  letter-spacing: -.025em;
+  color: #06283b;
+}
+
+.noale-member-role {
+  display: block;
+  margin-bottom: .8rem;
+
+  font-size: .65rem;
+  font-weight: 650;
+  letter-spacing: .22em;
+  color: #0097c9;
+}
+
+.noale-member-info p {
+  margin: 0;
+  color: #5b7181;
+  font-size: .88rem;
+  line-height: 1.5;
+}
 
 
 
@@ -885,6 +1202,68 @@ p { color: var(--color-muted); }
   }
 
   .pch-definitions { width:35%; }
+  /* NOALE RPI */
+  .noale-hero {
+    min-height: 440px;
+    background-position: 65% center;
+  }
+
+  .noale-hero-inner {
+    padding-top: 65px;
+    padding-bottom: 65px;
+    gap: 2rem;
+  }
+
+  .noale-hero-content {
+    width: 75%;
+  }
+
+  .noale-hero-side {
+    display: none;
+  }
+
+  .noale-services {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 2.5rem;
+  }
+
+  .noale-services-heading {
+    grid-column: 1 / -1;
+    padding-right: 0;
+  }
+
+  .noale-services-heading h2 {
+    max-width: 670px;
+  }
+
+  .noale-team {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .noale-team-heading h2 {
+    max-width: 620px;
+  }
+
+  .noale-team-members {
+    gap: 1.5rem;
+  }
+
+  .noale-member {
+    grid-template-columns: 95px minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .noale-member-photo {
+    width: 95px;
+    height: 135px;
+  }
+
+  .noale-member + .noale-member {
+    padding-left: 1.2rem;
+  }
+
+
   .timeline { grid-template-columns:repeat(3,1fr); row-gap:3rem; }
   .timeline-track { display:none; }
   .timeline-item { border-top:1px solid var(--color-border); }
@@ -936,6 +1315,118 @@ p { color: var(--color-muted); }
   }
 
   .pch-definitions { position:relative; width:100%; right:auto; top:auto; transform:none; margin-top:3.5rem; }
+
+  
+  /* NOALE RPI */
+  .noale-hero {
+    min-height: auto;
+
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(247, 251, 253, .98) 0%,
+        rgba(247, 251, 253, .94) 5%,
+        rgba(247, 251, 253, .78) 100%
+      ),
+      url("assets/images/noale-pch.png");
+
+    background-position: 65% center;
+  }
+
+  .noale-hero-inner {
+    padding-top: 70px;
+    padding-bottom: 55px;
+  }
+
+  .noale-hero-content {
+    width: 100%;
+    max-width: none;
+  }
+
+  .noale-logo img {
+    width: min(100%, 340px);
+  }
+
+  .noale-subtitle {
+    font-size: .64rem;
+    letter-spacing: .16em;
+    margin-bottom: 1.25rem;
+  }
+
+  .noale-description {
+    font-size: .98rem;
+    line-height: 1.65;
+  }
+
+  .noale-body {
+    padding: 48px 0 55px;
+  }
+
+  /* ÁREAS DE ATUAÇÃO */
+  .noale-services {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 50px;
+  }
+
+  .noale-services-heading {
+    grid-column: auto;
+    padding: 0 0 2rem;
+  }
+
+  .noale-services-heading h2,
+  .noale-team-heading h2 {
+    font-size: clamp(1.75rem, 6vw, 2.2rem);
+  }
+
+  .noale-service {
+    min-height: auto;
+    padding: 1.35rem 0;
+    border-left: 0;
+    border-top: 1px solid rgba(6, 40, 59, .12);
+  }
+
+  .noale-icon {
+    margin-bottom: .8rem;
+  }
+
+  /* EQUIPE */
+  .noale-team {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .noale-team-members {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .noale-member {
+    grid-template-columns: 105px minmax(0, 1fr);
+    gap: 1.2rem;
+  }
+
+  .noale-member-photo {
+    width: 105px;
+    height: 145px;
+  }
+
+  .noale-member + .noale-member {
+    padding: 2rem 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(6, 40, 59, .12);
+  }
+
+  .noale-member-info h3 {
+    font-size: 1.15rem;
+  }
+
+  .noale-member-info p {
+    font-size: .86rem;
+  }
+
+
+
   .timeline { display:block; padding-left:2.2rem; }
   .timeline::before { content:""; position:absolute; left:4px; top:0; bottom:0; width:1px; background:rgba(7,42,59,.2); }
   .timeline-track { display:block; top:0; bottom:0; left:4px; right:auto; width:1px; height:auto; }
@@ -971,6 +1462,57 @@ p { color: var(--color-muted); }
   .capability { grid-template-columns:38px 1fr 20px; }
  
   .scroll-indicator { display:none; }
+
+  /* NOALE RPI */
+  .noale-hero-inner {
+    padding-top: 55px;
+    padding-bottom: 45px;
+  }
+
+  .noale-logo img {
+    width: min(100%, 290px);
+  }
+
+  .noale-subtitle {
+    font-size: .6rem;
+    letter-spacing: .12em;
+  }
+
+  .noale-description {
+    font-size: .92rem;
+    line-height: 1.6;
+  }
+
+  .noale-services-heading h2,
+  .noale-team-heading h2 {
+    font-size: 1.8rem;
+  }
+
+  .noale-member {
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .noale-member-photo {
+    width: 90px;
+    height: 125px;
+  }
+
+  .noale-member-info h3 {
+    font-size: 1.05rem;
+  }
+
+  .noale-member-role {
+    font-size: .6rem;
+    letter-spacing: .14em;
+  }
+
+  .noale-member-info p {
+    font-size: .82rem;
+    line-height: 1.5;
+  }
+
+
 }
 
 @media (prefers-reduced-motion: reduce) {
