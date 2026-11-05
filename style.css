@@ -821,15 +821,6 @@ p { color: var(--color-muted); }
     );
 }
 
-.noale-eyebrow {
-  margin: 0 0 1.2rem;
-
-  font-size: .72rem;
-  font-weight: 650;
-  letter-spacing: .24em;
-  color: #007ba6;
-}
-
 /* ---------- SERVIÇOS ---------- */
 
 .noale-services {
@@ -837,15 +828,14 @@ p { color: var(--color-muted); }
   grid-template-columns: 1.8fr repeat(3, 1fr);
   gap: 0;
   align-items: start;
-  margin-bottom: 58px;
+  /*margin-bottom: 58px;*/
 }
 
 .noale-services-heading {
   padding-right: 3rem;
 }
 
-.noale-services-heading h2,
-.noale-team-heading h2 {
+.noale-services-heading h2{
   max-width: 440px;
   margin: 0;
 
@@ -856,8 +846,7 @@ p { color: var(--color-muted); }
   color: #06283b;
 }
 
-.noale-services-heading h2 span,
-.noale-team-heading h2 span {
+.noale-services-heading h2 span{
   color: #00b9e9;
 }
 
@@ -913,96 +902,395 @@ p { color: var(--color-muted); }
   color: #5b7181;
 }
 
-/* ---------- EQUIPE ---------- */
+/* ====================================================
+   RPI PARTNERS × ÁTRIA FINANCE
+   SEÇÃO EXCLUSIVA
+===================================================== */
 
-.noale-team {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 2.2rem;
-  align-items: start;
-}
+.atria {
+  --atria-navy: #072b48;
+  --atria-blue: #58c7ee;
+  --atria-teal: #009eaf;
+  --atria-border: #ccdae5;
 
-.noale-team-heading {
-  padding-right: 1rem;
-}
-
-.noale-team-heading h2 {
-  max-width: 310px;
-}
-
-.noale-team-members {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.4rem;
-}
-
-.noale-member {
-  min-width: 0;
-  display: grid;
-  grid-template-columns: 125px minmax(0, 1fr);
-  gap: 1.3rem;
-  align-items: start;
-}
-
-.noale-member + .noale-member {
-  padding-left: 2rem;
-  border-left: 1px solid rgba(6, 40, 59, .12);
-}
-
-.noale-member-photo {
-  width: 125px;
-  height: 165px;
+  color: var(--atria-navy);
+  background: #f8fbfd;
   overflow: hidden;
-  background: #dde7ec;
 }
 
-.noale-member-photo img {
+.atria-shell {
+  width: min(calc(100% - 10.5%), 1500px);
+  margin-inline: auto;
+}
+
+.atria-svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.atria-hero {
+  position: relative;
+  min-height: 485px;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+
+  background: linear-gradient(
+    103deg,
+    #fff 0%,
+    #f9fcfe 39%,
+    #eaf7fc 64%,
+    #cfeafb 100%
+  );
+}
+
+
+.atria-hero-art {
+  position: absolute;
+  inset: 0 0 0 46.5%;
+  z-index: 0;
+  overflow: hidden;
+
+  background: #dceffa;
+
+  clip-path: polygon(
+    20% 0,
+    16% 16%,
+    11% 36%,
+    7% 57%,
+    3% 78%,
+    0 100%,
+    100% 100%,
+    100% 0
+  );
+}
+
+
+
+.atria-hero-photo {
+  position: absolute;
+  inset: 0;
+
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
 
-  filter: saturate(.82);
-  transition: transform .45s ease, filter .45s ease;
+  background-image:
+    linear-gradient(
+    180deg,
+    rgba(223, 245, 255, .98) 0%,
+    rgba(223, 245, 255, .90) 20%,
+    rgba(223, 245, 255, .65) 38%,
+    rgba(223, 245, 255, .25) 58%,
+    rgba(223, 245, 255, 0) 75%
+  ),
+    url('assets/images/atria-hero-photo.png');
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-.noale-member:hover img {
-  transform: scale(1.04);
-  filter: saturate(1);
+
+.atria-hero-arc {
+  position: absolute;
+  width: 93%;
+  aspect-ratio: 1;
+  top: -80%;
+  right: -32%;
+
+  border: 1px solid rgba(255, 255, 255, .66);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 105px rgba(255, 255, 255, .045),
+    0 0 0 185px rgba(255, 255, 255, .035);
+
+  pointer-events: none;
 }
 
-.noale-member-info {
+/* ===========================
+   LOGOS
+=========================== */
+
+.atria-brand {
+  position: absolute;
+  z-index: 3;
+
+  top: 8%;
+  right: max(28px, calc((100vw - 1280px) / 2 - 120px));
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: clamp(14px, 1.6vw, 28px);
+  max-width: 86%;
+}
+
+.atria-brand img {
+  display: block;
+  height: auto;
+  object-fit: contain;
+}
+
+.atria-brand-rpi {
+  width: clamp(112px, 10.5vw, 175px);
+}
+
+.atria-brand-atria {
+  width: clamp(140px, 12.3vw, 205px);
+  mix-blend-mode: multiply;
+}
+
+.atria-brand-divider {
+  width: 1px;
+  height: 76px;
+  background: rgba(8, 54, 78, .4);
+  flex: 0 0 1px;
+}
+
+/* ===========================
+   TEXTO HERO
+=========================== */
+
+.atria-hero .atria-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.atria-hero-copy {
+  width: min(49%, 670px);
+  padding: 52px 0 44px;
+}
+
+.atria-kicker {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 29px;
+
+  font-size: clamp(.64rem, .95vw, .91rem);
+  font-weight: 750;
+  line-height: 1.5;
+  letter-spacing: .04em;
+  color: #10314c;
+}
+
+.atria-hero h2 {
+  margin: 0 0 24px;
+  max-width: 695px;
+
+  font-size: clamp(2.3rem, 3vw, 3.18rem);
+  font-weight: 780;
+  line-height: 1.075;
+  letter-spacing: -.043em;
+  color: #082e4a;
+}
+
+.atria-description {
+  margin: 0;
+  max-width: 670px;
+
+  font-size: clamp(.96rem, 1.07vw, 1.11rem);
+  line-height: 1.59;
+  color: #123953;
+}
+
+.atria-description em {
+  font-style: italic;
+}
+
+/* ===========================
+   SOLUÇÕES FINANCEIRAS
+=========================== */
+
+.atria-details {
+  padding:
+    clamp(48px, 4.4vw, 70px)
+    0
+    clamp(60px, 5vw, 85px);
+
+  background: linear-gradient(
+    180deg,
+    #fafcfe 0%,
+    #f6fafd 100%
+  );
+}
+
+.atria-details-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, .39fr)
+    minmax(0, .68fr);
+
+  gap: clamp(32px, 3.1vw, 52px);
+  align-items: stretch;
+}
+
+.atria-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-right: clamp(25px, 2.6vw, 44px);
+  border-right: 1px solid #d8e3ec;
+}
+
+.atria-intro h3 {
+  max-width: 550px;
+  margin: 0 0 42px;
+
+  font-size: clamp(2.1rem, 2.95vw, 3.05rem);
+  font-weight: 780;
+  line-height: 1.09;
+  letter-spacing: -.046em;
+  color: #082d4b;
+}
+
+.atria-intro h3 span {
+  color: var(--atria-blue);
+}
+
+/* ===========================
+   INDICADORES FINANCEIROS
+=========================== */
+
+.atria-metrics {
+  display: flex;
+  align-items: stretch;
+  gap: 22px;
+}
+
+.atria-metric {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
   min-width: 0;
 }
 
-.noale-member-info h3 {
-  margin: 0 0 .35rem;
-
-  font-size: 1.18rem;
-  font-weight: 600;
-  letter-spacing: -.025em;
-  color: #06283b;
+.atria-metric + .atria-metric {
+  border-left: 1px solid #aabeca;
+  padding-left: 21px;
 }
 
-.noale-member-role {
+.atria-metric svg {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  fill: none;
+  stroke: var(--atria-teal);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.atria-metric strong {
   display: block;
-  margin-bottom: .8rem;
+  white-space: nowrap;
 
-  font-size: .65rem;
-  font-weight: 650;
-  letter-spacing: .22em;
-  color: #0097c9;
+  font-size: clamp(1.1rem, 1.55vw, 1.65rem);
+  letter-spacing: -.045em;
+  font-weight: 790;
+  line-height: 1.19;
+  color: #082d4b;
 }
 
-.noale-member-info p {
+.atria-metric small {
+  display: block;
+  margin-top: 8px;
+
+  font-size: clamp(.65rem, .82vw, .86rem);
+  font-weight: 600;
+  letter-spacing: .045em;
+  line-height: 1.42;
+  color: #547490;
+}
+
+/* ===========================
+   CARDS DOS SERVIÇOS
+=========================== */
+
+.atria-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(155px, 1fr));
+  gap: 20px;
+}
+
+.atria-card {
+  min-width: 0;
+  min-height: 155px;
+
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  align-items: start;
+  column-gap: 23px;
+
+  padding: 23px 22px;
+
+  background: rgba(255, 255, 255, .61);
+  border: 1px solid var(--atria-border);
+  border-radius: 14px;
+
+  box-shadow: 0 3px 10px rgba(9, 52, 80, .018);
+
+  transition:
+    transform 320ms ease,
+    box-shadow 320ms ease,
+    border-color 320ms ease;
+}
+
+.atria-card:hover {
+  transform: translateY(-4px);
+  border-color: #9bc7dc;
+  box-shadow: 0 15px 32px rgba(10, 58, 89, .08);
+}
+
+.atria-card-icon {
+  width: 76px;
+  height: 76px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 15px;
+  background: #e3f5fa;
+}
+
+.atria-card-icon img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  display: block;
+}
+
+.atria-card h4 {
+  margin: 0 0 9px;
+
+  font-size: clamp(1.05rem, 1.32vw, 1.43rem);
+  font-weight: 750;
+  line-height: 1.23;
+  letter-spacing: -.033em;
+  color: #082d4b;
+}
+
+.atria-card p {
   margin: 0;
-  color: #5b7181;
-  font-size: .88rem;
-  line-height: 1.5;
+  font-size: clamp(.91rem, 1vw, 1.08rem);
+  line-height: 1.42;
+  color: #4c6072;
 }
-
-
-
 
 
 .journey { background:#eef2f1; }
@@ -1080,6 +1368,27 @@ p { color: var(--color-muted); }
 .leadership-copy h2 { margin-bottom:.8rem; }
 .leadership-copy > h3 { max-width:760px; color:#37505b; margin-bottom:1.7rem; }
 .leadership-copy > p { max-width:760px; }
+
+/* =========================================
+   ANTONIO CUNHA · RPI PARTNERS
+========================================= */
+
+.antonio-grid {
+  margin-top: clamp(3rem, 6vw, 6rem);
+  padding-top: clamp(3rem, 5vw, 5rem);
+  border-top: 1px solid var(--color-border);
+}
+
+.antonio-portrait {
+  display: block;
+  width: min(100%, 420px);
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+
 
 .trajectory-toggle { margin-top:1.6rem; display:flex; width:100%; align-items:center; justify-content:space-between; padding:1rem 0; border:0; border-bottom:1px solid var(--color-border); background:none; font-weight:560; cursor:pointer; }
 .trajectory-toggle span { transition:transform var(--transition); }
@@ -1235,34 +1544,150 @@ p { color: var(--color-muted); }
   .noale-services-heading h2 {
     max-width: 670px;
   }
+  
+  /* =========================================
+    ÁTRIA FINANCE — TABLET
+  ========================================= */
 
-  .noale-team {
+  .atria-shell {
+    width: min(calc(100% - 64px), var(--container));
+  }
+
+  /* HERO */
+
+  .atria-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+  }
+
+  .atria-hero > .atria-shell {
+    order: 1;
+  }
+
+  .atria-hero-copy {
+    width: 100%;
+    max-width: 750px;
+    padding: 65px 0 45px;
+  }
+
+  .atria-hero h2 {
+    max-width: 750px;
+    font-size: clamp(2.4rem, 4.5vw, 3.2rem);
+    line-height: 1.12;
+  }
+
+  .atria-hero h2 br {
+    display: none;
+  }
+
+  .atria-description {
+    max-width: 730px;
+    font-size: 1.02rem;
+    line-height: 1.65;
+  }
+
+  /* FOTOGRAFIA */
+
+  .atria-hero-art {
+    position: relative;
+    order: 2;
+    inset: auto;
+    width: 100%;
+    height: 370px;
+    clip-path: none;
+  }
+
+  .atria-hero-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-position: center 55%;
+  }
+
+  /* LOGOS */
+
+  .atria-brand {
+    top: 8%;
+    right: 32px;
+    gap: 20px;
+    max-width: calc(100% - 64px);
+  }
+
+  .atria-brand-rpi {
+    width: 140px;
+  }
+
+  .atria-brand-atria {
+    width: 165px;
+  }
+
+  .atria-brand-divider {
+    height: 58px;
+  }
+
+  /* SOLUÇÕES */
+
+  .atria-details-grid {
     grid-template-columns: 1fr;
-    gap: 1.8rem;
+    gap: 35px;
   }
 
-  .noale-team-heading h2 {
-    max-width: 620px;
+  .atria-intro {
+    padding-right: 0;
+    padding-bottom: 32px;
+    border-right: 0;
+    border-bottom: 1px solid #d8e3ec;
   }
 
-  .noale-team-members {
-    gap: 1.5rem;
+  .atria-intro h3 {
+    max-width: 750px;
+    margin-bottom: 30px;
+    font-size: clamp(2.2rem, 4vw, 2.8rem);
   }
 
-  .noale-member {
-    grid-template-columns: 95px minmax(0, 1fr);
-    gap: 1rem;
+  /* INDICADORES */
+
+  .atria-metrics {
+    flex-wrap: wrap;
+    gap: 25px;
   }
 
-  .noale-member-photo {
-    width: 95px;
-    height: 135px;
+  .atria-metric + .atria-metric {
+    padding-left: 25px;
+    border-left: 1px solid #aabeca;
   }
 
-  .noale-member + .noale-member {
-    padding-left: 1.2rem;
+  /* CARDS */
+
+  .atria-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    gap: 18px;
   }
 
+  .atria-card {
+    grid-template-columns: 64px minmax(0, 1fr);
+    min-height: 0;
+    gap: 18px;
+    padding: 22px;
+  }
+
+  .atria-card-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .atria-card-icon img {
+    width: 35px;
+    height: 35px;
+  }
+
+  
 
   .timeline { grid-template-columns:repeat(3,1fr); row-gap:3rem; }
   .timeline-track { display:none; }
@@ -1366,7 +1791,7 @@ p { color: var(--color-muted); }
   .noale-services {
     grid-template-columns: 1fr;
     gap: 0;
-    margin-bottom: 50px;
+    
   }
 
   .noale-services-heading {
@@ -1374,8 +1799,7 @@ p { color: var(--color-muted); }
     padding: 0 0 2rem;
   }
 
-  .noale-services-heading h2,
-  .noale-team-heading h2 {
+  .noale-services-heading h2{
     font-size: clamp(1.75rem, 6vw, 2.2rem);
   }
 
@@ -1389,42 +1813,178 @@ p { color: var(--color-muted); }
   .noale-icon {
     margin-bottom: .8rem;
   }
+  
+  /* =========================================
+    ÁTRIA FINANCE — MOBILE
+  ========================================= */
 
-  /* EQUIPE */
-  .noale-team {
+  .atria-shell {
+    width: min(calc(100% - 40px), var(--container));
+  }
+
+  /* HERO */
+
+  .atria-hero-copy {
+    max-width: 100%;
+    padding: 52px 0 38px;
+  }
+
+  .atria-kicker {
+    gap: 10px;
+    margin-bottom: 23px;
+    font-size: .68rem;
+    line-height: 1.5;
+  }
+
+  .atria-kicker span {
+    flex: 0 0 25px;
+    height: 3px;
+  }
+
+  .atria-hero h2 {
+    max-width: 100%;
+    margin-bottom: 22px;
+
+    font-size: clamp(2rem, 6.3vw, 2.8rem);
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+
+  .atria-description {
+    max-width: 100%;
+    font-size: .97rem;
+    line-height: 1.65;
+  }
+
+  /* FOTOGRAFIA */
+
+  .atria-hero-art {
+    height: 310px;
+  }
+
+  .atria-hero-photo {
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(223, 245, 255, .96) 0%,
+        rgba(223, 245, 255, .75) 18%,
+        rgba(223, 245, 255, .30) 38%,
+        rgba(223, 245, 255, 0) 60%
+      ),
+      url('assets/images/atria-hero-photo.png');
+
+    background-position: 55% center;
+    background-size: cover;
+  }
+
+  .atria-hero-arc {
+    top: -90%;
+    right: -40%;
+  }
+
+  /* LOGOS */
+
+  .atria-brand {
+    top: 8%;
+    right: 20px;
+    gap: 14px;
+    max-width: calc(100% - 40px);
+  }
+
+  .atria-brand-rpi {
+    width: 112px;
+  }
+
+  .atria-brand-atria {
+    width: 138px;
+  }
+
+  .atria-brand-divider {
+    height: 46px;
+  }
+
+  /* SOLUÇÕES */
+
+  .atria-details {
+    padding: 48px 0 60px;
+  }
+
+  .atria-details-grid {
+    gap: 30px;
+  }
+
+  .atria-intro {
+    padding-bottom: 30px;
+  }
+
+  .atria-intro h3 {
+    max-width: 100%;
+    font-size: clamp(2rem, 5.5vw, 2.5rem);
+    line-height: 1.14;
+    margin-bottom: 28px;
+  }
+
+  /* INDICADORES */
+
+  .atria-metrics {
+    gap: 18px;
+  }
+
+  .atria-metric {
+    gap: 12px;
+  }
+
+  .atria-metric + .atria-metric {
+    padding-left: 18px;
+  }
+
+  .atria-metric img,
+  .atria-metric svg {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    object-fit: contain;
+  }
+
+  .atria-metric strong {
+    font-size: 1.25rem;
+  }
+
+  .atria-metric small {
+    font-size: .72rem;
+  }
+
+  /* CARDS */
+
+  .atria-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .atria-card {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 14px;
+    padding: 18px;
   }
 
-  .noale-team-members {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .atria-card-icon {
+    width: 56px;
+    height: 56px;
   }
 
-  .noale-member {
-    grid-template-columns: 105px minmax(0, 1fr);
-    gap: 1.2rem;
+  .atria-card-icon img {
+    width: 32px;
+    height: 32px;
   }
 
-  .noale-member-photo {
-    width: 105px;
-    height: 145px;
+  .atria-card h4 {
+    font-size: 1.1rem;
   }
 
-  .noale-member + .noale-member {
-    padding: 2rem 0 0;
-    border-left: 0;
-    border-top: 1px solid rgba(6, 40, 59, .12);
+  .atria-card p {
+    font-size: .9rem;
+    line-height: 1.5;
   }
-
-  .noale-member-info h3 {
-    font-size: 1.15rem;
-  }
-
-  .noale-member-info p {
-    font-size: .86rem;
-  }
-
 
 
   .timeline { display:block; padding-left:2.2rem; }
@@ -1439,7 +1999,21 @@ p { color: var(--color-muted); }
   .experience-note { left:1rem; bottom:1rem; }
   .portrait-frame { max-width: 300px; height: 320px; margin-inline: auto; }
   .portrait-frame img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: center 20%; }
-  
+  .antonio-grid {
+    margin-top: 3rem;
+    padding-top: 3rem;
+  }
+
+  .antonio-portrait {
+    width: min(100%, 350px);
+    margin-inline: auto;
+  }
+
+  .antonio-grid .portrait-wrap > p {
+    text-align: center;
+  }
+
+
   .bio-copy { columns:1; }
   .sector-grid { grid-template-columns:1fr; }
   .sector { min-height:360px; }
@@ -1483,34 +2057,176 @@ p { color: var(--color-muted); }
     line-height: 1.6;
   }
 
-  .noale-services-heading h2,
-  .noale-team-heading h2 {
+  .noale-services-heading h2{
     font-size: 1.8rem;
   }
 
-  .noale-member {
-    grid-template-columns: 90px minmax(0, 1fr);
-    gap: 1rem;
+  
+  /* =========================================
+    ÁTRIA FINANCE — CELULARES
+  ========================================= */
+
+  .atria-shell {
+    width: min(calc(100% - 32px), var(--container));
   }
 
-  .noale-member-photo {
-    width: 90px;
-    height: 125px;
+  /* HERO */
+
+  .atria-hero-copy {
+    padding: 43px 0 35px;
   }
 
-  .noale-member-info h3 {
-    font-size: 1.05rem;
+  .atria-kicker {
+    gap: 9px;
+    margin-bottom: 20px;
+    font-size: .62rem;
+    letter-spacing: .015em;
   }
 
-  .noale-member-role {
-    font-size: .6rem;
-    letter-spacing: .14em;
+  .atria-kicker span {
+    flex-basis: 20px;
   }
 
-  .noale-member-info p {
-    font-size: .82rem;
+  .atria-hero h2 {
+    font-size: clamp(1.7rem, 7.8vw, 2.2rem);
+    line-height: 1.14;
+    letter-spacing: -.045em;
+    overflow-wrap: anywhere;
+  }
+
+  .atria-description {
+    font-size: .93rem;
+    line-height: 1.65;
+  }
+
+  /* FOTO */
+
+  .atria-hero-art {
+    height: 260px;
+  }
+
+  .atria-hero-photo {
+    background-position: 55% center;
+  }
+
+  .atria-hero-arc {
+    width: 120%;
+    top: -115%;
+    right: -60%;
+  }
+
+  /* LOGOS */
+
+  .atria-brand {
+    top: 8%;
+    right: 16px;
+    gap: 10px;
+    max-width: calc(100% - 32px);
+  }
+
+  .atria-brand-rpi {
+    width: 85px;
+  }
+
+  .atria-brand-atria {
+    width: 105px;
+  }
+
+  .atria-brand-divider {
+    height: 36px;
+  }
+
+  /* SOLUÇÕES */
+
+  .atria-details {
+    padding: 42px 0 55px;
+  }
+
+  .atria-details-grid {
+    gap: 25px;
+  }
+
+  .atria-intro {
+    padding-bottom: 30px;
+  }
+
+  .atria-intro h3 {
+    font-size: clamp(1.85rem, 7.8vw, 2.3rem);
+    line-height: 1.15;
+    margin-bottom: 30px;
+  }
+
+  /* INDICADORES EM COLUNA */
+
+  .atria-metrics {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .atria-metric {
+    width: 100%;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .atria-metric + .atria-metric {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .atria-metric img,
+  .atria-metric svg {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+  }
+
+  .atria-metric strong {
+    font-size: 1.4rem;
+  }
+
+  .atria-metric small {
+    margin-top: 5px;
+    font-size: .72rem;
+  }
+
+  /* CARDS EM COLUNA */
+
+  .atria-cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .atria-card {
+    grid-template-columns: 60px minmax(0, 1fr);
+    align-items: start;
+    gap: 17px;
+
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .atria-card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+  }
+
+  .atria-card-icon img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .atria-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .atria-card p {
+    font-size: .91rem;
     line-height: 1.5;
   }
+
 
 
 }
