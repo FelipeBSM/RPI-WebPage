@@ -1090,7 +1090,7 @@ p { color: var(--color-muted); }
   max-width: 695px;
 
   font-size: clamp(2.3rem, 3vw, 3.18rem);
-  font-weight: 780;
+  font-weight: 550;
   line-height: 1.075;
   letter-spacing: -.043em;
   color: #082e4a;
@@ -1151,7 +1151,7 @@ p { color: var(--color-muted); }
   margin: 0 0 42px;
 
   font-size: clamp(2.1rem, 2.95vw, 3.05rem);
-  font-weight: 780;
+  font-weight: 550;
   line-height: 1.09;
   letter-spacing: -.046em;
   color: #082d4b;
