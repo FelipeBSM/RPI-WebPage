@@ -2012,7 +2012,9 @@ p { color: var(--color-muted); }
   .antonio-grid .portrait-wrap > p {
     text-align: center;
   }
-
+  .portrait-wrap p {
+    text-align: center;
+  }
 
   .bio-copy { columns:1; }
   .sector-grid { grid-template-columns:1fr; }

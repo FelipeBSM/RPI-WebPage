@@ -109,22 +109,31 @@
   window.addEventListener('scroll', updateTimeline, { passive: true });
   window.addEventListener('resize', updateTimeline);
 
-  const toggle = document.querySelector('.trajectory-toggle');
-  const panel = document.querySelector('#trajectory-panel');
-  toggle?.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!open));
+
+  document.querySelectorAll('.trajectory-toggle').forEach(toggle => {
+    const panelId = toggle.getAttribute('aria-controls');
+    const panel = document.getElementById(panelId);
+
     if (!panel) return;
-    if (open) {
-      panel.hidden = true;
-    } else {
-      panel.hidden = false;
-      panel.animate?.([
-        { opacity: 0, transform: 'translateY(-8px)' },
-        { opacity: 1, transform: 'translateY(0)' }
-      ], { duration: reducedMotion ? 1 : 380, easing: 'cubic-bezier(.22,1,.36,1)' });
-    }
+
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+
+      toggle.setAttribute('aria-expanded', String(!open));
+      panel.hidden = open;
+
+      if (!open) {
+        panel.animate?.([
+          { opacity: 0, transform: 'translateY(-8px)' },
+          { opacity: 1, transform: 'translateY(0)' }
+        ], {
+          duration: reducedMotion ? 1 : 380,
+          easing: 'cubic-bezier(.22,1,.36,1)'
+        });
+      }
+    });
   });
+
 
   const navLinks = [...document.querySelectorAll('.desktop-nav a[href^="#"]')];
   const sections = navLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
